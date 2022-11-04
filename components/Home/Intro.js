@@ -29,14 +29,3 @@ const Intro = () => {
 };
 
 export default Intro;
-
-const styles = StyleSheet.create({
-  image: {
-    height: 60,
-    width: 60,
-    borderRadius: 10,
-    position: "absolute",
-    top: 30,
-    right: 30,
-  },
-});

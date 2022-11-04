@@ -9,6 +9,7 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./screens/Home";
+import DetectorScreen from "./screens/DetectorScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -36,11 +37,17 @@ export default function App() {
             color: "#fff",
           },
         }}
+        initialRouteName="Detector"
       >
         <Stack.Screen
           name="Home"
           component={Home}
           options={{ headerTitle: "Drowsy Detector" }}
+        />
+        <Stack.Screen
+          name="Detector"
+          component={DetectorScreen}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

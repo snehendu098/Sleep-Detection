@@ -4,12 +4,12 @@ import Intro from "../components/Home/Intro";
 import Decription from "../components/Home/Decription";
 import Create from "../components/core/Create";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Intro />
       <Decription />
-      <Create />
+      <Create onPress={() => navigation.navigate("Detector")} />
     </ScrollView>
   );
 };

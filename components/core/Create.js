@@ -2,9 +2,9 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
 
-const Create = () => {
+const Create = ({ onPress }) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <AntDesign name="plus" size={40} color="#FDEADF" />
     </TouchableOpacity>
   );
