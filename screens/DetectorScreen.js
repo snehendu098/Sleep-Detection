@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 import { Camera } from "expo-camera";
 import * as FaceDetector from "expo-face-detector";
 import { Audio } from "expo-av";
+import SoundStopper from "../components/Detector/SoundStopper";
 
 const DetectorScreen = () => {
   const [hasPermission, setHasPermission] = useState();
@@ -33,10 +34,10 @@ const DetectorScreen = () => {
     if (soundPlay) {
       playSound();
     } else if (!soundPlay && sound) {
-      await sound.stopAsync();
       setcloseTime(0);
-      setSound(null);
+      await sound.stopAsync();
       await sound.unloadAsync();
+      setSound(null);
     }
   };
 
@@ -119,43 +120,7 @@ const DetectorScreen = () => {
           </TouchableOpacity>
         )}
       </View>
-      {sound && (
-        <View
-          style={{
-            position: "absolute",
-            bottom: 0,
-            width: Dimensions.get("window").width,
-            alignItems: "center",
-            backgroundColor: "#c49543",
-            right: 0,
-            left: 0,
-            padding: 20,
-          }}
-        >
-          <Text style={{ fontFamily: "Poppins_600SemiBold" }}>
-            Press the Button to stop the sound
-          </Text>
-          <TouchableOpacity
-            onPress={() => {
-              setSoundPlay(false);
-            }}
-          >
-            <Text
-              style={{
-                backgroundColor: "#1c4c9e",
-                padding: 10,
-                paddingHorizontal: "10%",
-                marginTop: 10,
-                borderRadius: 5,
-                fontFamily: "Poppins_600SemiBold",
-                color: "#fff",
-              }}
-            >
-              Stop Sound
-            </Text>
-          </TouchableOpacity>
-        </View>
-      )}
+      {sound && <SoundStopper setSoundPlay={setSoundPlay} />}
     </ScrollView>
   );
 };
