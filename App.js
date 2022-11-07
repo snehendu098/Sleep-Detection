@@ -37,7 +37,7 @@ export default function App() {
             color: "#fff",
           },
         }}
-        initialRouteName="Detector"
+        initialRouteName="Home"
       >
         <Stack.Screen
           name="Home"
@@ -53,12 +53,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
