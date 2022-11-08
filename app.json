@@ -1,14 +1,15 @@
 {
   "expo": {
-    "name": "SleepDetection",
-    "slug": "SleepDetection",
+    "name": "Drowsy Detector",
+    "slug": "drowsy-detector",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logo.png",
+    "icon": "./assets/icon.png",
+    "owner": "snehendu098",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/logo2.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#1E1E1E"
     },
     "updates": {
@@ -22,10 +23,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.snehendu098.drowsydetector"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8ce54338-2ed8-460f-9d8f-cb092e7e2fcd"
+      }
     }
   }
 }
